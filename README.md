@@ -5,7 +5,7 @@ Marathon de création de jeux vidéo de 48h non-stop au campus Arc 2 de la HE-Ar
 <a href="https://upsijam.ch/">https://upsijam.ch/</a>
 
 
-[<img height="40px" src="https://static.itch.io/images/badge.svg">]()
+[<img height="40px" src="https://static.itch.io/images/badge.svg">](https://itch.io/jam/upsi-jam-3-0)
 
 
 # L'équipe
