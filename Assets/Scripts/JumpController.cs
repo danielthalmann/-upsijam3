@@ -8,9 +8,18 @@ using UnityEngine;
 public class JumpController : MonoBehaviour
 {
 	[SerializeField] private LayerMask groundLayerMask;
-	public float jumpForce = 5f;
+
 	private Rigidbody2D	rb;
 	private CapsuleCollider2D cc;
+
+	public AudioLoudnessDetection detector;
+	public float loudnessSensibility = 100;
+	public float threshold = 10;
+
+	public float minJump = 3;
+	public float maxJump = 10;
+
+	public float maxLoudness = 100;
 
 	void Awake()
 	{
@@ -29,6 +38,19 @@ public class JumpController : MonoBehaviour
     {
 		if (isGrounded())
 		{
+			/* jump with microphone */
+			
+			float loudness = detector.GetLoudnessFromMicrophone() * loudnessSensibility;
+			if (loudness >= threshold)
+			{
+				Debug.Log(loudness);
+				rb.velocity = Vector2.up * (minJump + (maxJump - minJump) * loudness / maxLoudness);
+			}
+
+			/* jump with mouse click:
+
+			float	jumpForce = 5;
+
 			if (Input.GetMouseButtonDown(0))
 			{
 				rb.velocity = Vector2.up * jumpForce * 1;
@@ -41,6 +63,7 @@ public class JumpController : MonoBehaviour
 			{
 				rb.velocity = Vector2.up * jumpForce * 0.5f;
 			}
+			*/
 		}
     }
 
