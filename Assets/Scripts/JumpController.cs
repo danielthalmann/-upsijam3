@@ -39,7 +39,7 @@ public class JumpController : MonoBehaviour
 		if (isGrounded())
 		{
 			/* jump with microphone */
-			
+
 			float loudness = detector.GetLoudnessFromMicrophone() * loudnessSensibility;
 			if (loudness >= threshold)
 			{
@@ -47,7 +47,7 @@ public class JumpController : MonoBehaviour
 				rb.velocity = Vector2.up * (minJump + (maxJump - minJump) * loudness / maxLoudness);
 			}
 
-			/* jump with mouse click:
+			/* jump with mouse click: */
 
 			float	jumpForce = 5;
 
@@ -63,7 +63,6 @@ public class JumpController : MonoBehaviour
 			{
 				rb.velocity = Vector2.up * jumpForce * 0.5f;
 			}
-			*/
 		}
     }
 
