@@ -25,19 +25,19 @@ public class EnemyPosition
 
     public bool IsGtRadius(float radius)
     {
-        return (radius < this.radius);
+        return (radius < current);
     }
 
     public void Update()
     {
         current += Time.deltaTime * speed;
 
-        Vector3 pos = ((new Vector3(Mathf.Cos((float)Math.PI / current), Mathf.Sin((float)Math.PI / current), 0)) * radius) + instance.transform.position;
+        Vector3 pos = (new Vector3(Mathf.Cos(current), Mathf.Sin(current), 0)) * radius;
+
+        pos += origin;
 
         instance.transform.position = pos;
-
-        Debug.Log("Update :" + current);
-
+        instance.transform.eulerAngles = Vector3.forward * ((current * 180 / Mathf.PI) + 90);
     }
 
 }

@@ -58,8 +58,9 @@ public class EnemiesSpawn : MonoBehaviour
 
             Debug.Log("boucle instance :" + instances.Count);
 
-            if (enemy.IsGtRadius(180f) )
+            if (enemy.IsGtRadius(Mathf.PI) )
             {
+                
                 Debug.Log("IsGtRadius");
                 Destroy(enemy.instance);
                 instances.Remove(enemy);
