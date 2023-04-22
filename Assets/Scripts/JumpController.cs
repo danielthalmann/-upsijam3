@@ -66,7 +66,7 @@ public class JumpController : MonoBehaviour
 		}
     }
 
-	bool isGrounded()
+	public bool isGrounded()
 	{
 		return Physics2D.Raycast(cc.bounds.center, Vector2.down, cc.bounds.extents.y + 0.1f, groundLayerMask);
 	}
