@@ -46,14 +46,12 @@ public class AudioLoudnessDetection : MonoBehaviour
         float rmsValue = 0.0f;
 
     #if UNITY_WEBGL && !UNITY_EDITOR
-        float maxAmplitudeWebGL = 1.0f; // Assuming WebGL returns values in the range of -1 to 1
+        float maxAmplitudeWebGL = 1.2f; // Permet de régler l'amplitude de detection du micro. Pour plus de sensi. on descend la valeur.
         rmsValue = CalculateRMS(Microphone.volumes) / maxAmplitudeWebGL;
-        Debug.Log(rmsValue);
     #else
         string microphoneName = Microphone.devices[0];
-        float maxAmplitudeNonWebGL = 0.8f;
+        float maxAmplitudeNonWebGL = 0.8f; // Permet de régler l'amplitude de detection du micro. Pour plus de sensi. on descend la valeur.
         rmsValue = GetLoudnessFromAudioClip(Microphone.GetPosition(Microphone.devices[0]), microphoneClip) / maxAmplitudeNonWebGL;
-        // Debug.Log(rmsValue);
     #endif
 
         return rmsValue;
