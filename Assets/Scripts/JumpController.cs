@@ -43,7 +43,7 @@ public class JumpController : MonoBehaviour
 			float loudness = detector.GetLoudnessFromMicrophone() * loudnessSensibility;
 			if (loudness >= threshold)
 			{
-				Debug.Log(loudness);
+				//Debug.Log(loudness);
 				rb.velocity = Vector2.up * (minJump + (maxJump - minJump) * loudness / maxLoudness);
 			}
 
