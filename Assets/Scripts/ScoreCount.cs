@@ -6,10 +6,16 @@ using TMPro;
 public class ScoreCount : MonoBehaviour
 {
     public TextMeshProUGUI scoreText;
+    public static ScoreCount Instance;
 
     public float scoreMultiplier = 1;
     public int secondsToMultiplier = 15;
     private int scoreCount = 0;
+
+    void Awake()
+    {
+        Instance = this;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -36,18 +42,18 @@ public class ScoreCount : MonoBehaviour
         scoreText.SetText(scoreCount.ToString());
     }
 
-    float GetCurrentSeconds()
+    public float GetCurrentSeconds()
     {
         return Time.realtimeSinceStartup;
     }
 
-    float GetMultiplier()
+    public float GetMultiplier()
     {
         float currentSeconds = GetCurrentSeconds();
         return scoreMultiplier + (currentSeconds / secondsToMultiplier);
     }
 
-    int GetScoreCount()
+    public int GetScoreCount()
     {
         return scoreCount;
     }
