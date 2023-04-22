@@ -37,7 +37,7 @@ public class EnemyPosition
         pos += origin;
 
         instance.transform.position = pos;
-        instance.transform.eulerAngles = Vector3.forward * ((current * 180 / Mathf.PI) + 90);
+        instance.transform.eulerAngles = Vector3.forward * ((current * 180 / Mathf.PI) - 90);
     }
 
 }
