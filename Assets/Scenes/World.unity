@@ -644,4 +644,4 @@ MonoBehaviour:
   maxScale: {x: 3, y: 3}
   detector: {fileID: 1496101002}
   loudnessSensibility: 100
-  threshold: 0.1
+  threshold: 1

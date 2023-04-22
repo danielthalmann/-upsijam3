@@ -53,6 +53,16 @@ public class AudioLoudnessDetection : MonoBehaviour
     public float GetLoudnessFromAudioClip(int clipPosition, AudioClip clip)
     {
         int startPosition = clipPosition - sampleWindow;
+
+        if (startPosition < 0)
+        {
+            startPosition = 0;
+        }
+        else if (startPosition + sampleWindow > clip.samples)
+        {
+            startPosition = clip.samples - sampleWindow;
+        }
+
         float[] waveData = new float[sampleWindow];
 
         if (! clip.GetData(waveData, startPosition))
