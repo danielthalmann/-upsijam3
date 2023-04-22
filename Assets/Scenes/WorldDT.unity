@@ -224,6 +224,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4870674754313498790, guid: 892a1d0f934e1a145acc33a15b2abc29, type: 3}
+      propertyPath: rotationSpeed
+      value: -20
+      objectReference: {fileID: 0}
     - target: {fileID: 4870674754313498792, guid: 892a1d0f934e1a145acc33a15b2abc29, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -391,7 +395,10 @@ MonoBehaviour:
   frequence: 1.5
   speed: 0.5
   enemies:
+  - {fileID: 8727769489009786093, guid: e7e8a4b2e9fb241f3b0ac3fb6e79d5ff, type: 3}
   - {fileID: 8727769489009786093, guid: 65b8494bd82f46749803f3d9d96d5efd, type: 3}
+  - {fileID: 8727769489009786093, guid: 283859a7ae1ce4a2b8289d88af393aba, type: 3}
+  - {fileID: 8727769489009786093, guid: dc1500ffbd60b42e9a34e94970675cd4, type: 3}
 --- !u!4 &1481204981
 Transform:
   m_ObjectHideFlags: 0
