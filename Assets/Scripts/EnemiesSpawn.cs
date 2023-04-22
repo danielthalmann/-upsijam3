@@ -32,21 +32,15 @@ public class EnemiesSpawn : MonoBehaviour
 
         if (timerElapsed > frequence)
         {
-            Debug.Log("spawn");
-
             if (enemies.Count > 0)
             {
-                int index = UnityEngine.Random.Range(0, instances.Count - 1);
-
-                Debug.Log("random :" + index);
+                int index = UnityEngine.Random.Range(0, enemies.Count);
 
                 GameObject newEnemyObject = Instantiate(enemies[index], transform);
 
                 EnemyPosition enemy = new EnemyPosition(newEnemyObject, transform.position, radius, speed);
 
                 instances.Add(enemy);
-
-                Debug.Log("count instance :" + instances.Count);
 
             }
             timerElapsed = 0;
@@ -56,12 +50,10 @@ public class EnemiesSpawn : MonoBehaviour
         {
             EnemyPosition enemy = instances[i];
 
-            Debug.Log("boucle instance :" + instances.Count);
 
             if (enemy.IsGtRadius(Mathf.PI) )
             {
-                
-                Debug.Log("IsGtRadius");
+               
                 Destroy(enemy.instance);
                 instances.Remove(enemy);
             } 
