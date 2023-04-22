@@ -641,7 +641,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   source: {fileID: 0}
   minScale: {x: 1, y: 1}
-  maxScale: {x: 3, y: 3}
+  maxScale: {x: 2, y: 2}
   detector: {fileID: 1496101002}
   loudnessSensibility: 100
-  threshold: 1
+  threshold: 7
