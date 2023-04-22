@@ -53,7 +53,7 @@ public class AudioLoudnessDetection : MonoBehaviour
         string microphoneName = Microphone.devices[0];
         float maxAmplitudeNonWebGL = 0.8f;
         rmsValue = GetLoudnessFromAudioClip(Microphone.GetPosition(Microphone.devices[0]), microphoneClip) / maxAmplitudeNonWebGL;
-        Debug.Log(rmsValue);
+        // Debug.Log(rmsValue);
     #endif
 
         return rmsValue;
