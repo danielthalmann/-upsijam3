@@ -23,14 +23,13 @@ public class PlanetRotate : MonoBehaviour
             multiplier = 999;
         }
 
-        float multipliedRotationAmount = rotationSpeed + multiplier;
+        float multipliedRotationAmount = rotationSpeed + (multiplier * 2);
 
         // Change the rotation based on the current time
         float rotationAmount = (multipliedRotationAmount * Time.deltaTime);
 
-        Debug.Log(Time.deltaTime);
-        Debug.Log(rotationAmount);
-        Debug.Log(multipliedRotationAmount);
+        //Debug.Log("Planet:");
+        //Debug.Log(multipliedRotationAmount / 100);
 
         // Rotate the object
         transform.Rotate(0, 0, rotationAmount);
