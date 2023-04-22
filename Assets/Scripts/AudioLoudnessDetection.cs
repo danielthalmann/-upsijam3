@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class AudioLoudnessDetection : MonoBehaviour
 {
@@ -42,12 +43,20 @@ public class AudioLoudnessDetection : MonoBehaviour
 
     public float GetLoudnessFromMicrophone()
     {
+        float rmsValue = 0.0f;
+
     #if UNITY_WEBGL && !UNITY_EDITOR
-        return Microphone.volumes[0];
+        float maxAmplitudeWebGL = 1.0f; // Assuming WebGL returns values in the range of -1 to 1
+        rmsValue = CalculateRMS(Microphone.volumes) / maxAmplitudeWebGL;
+        Debug.Log(rmsValue);
     #else
         string microphoneName = Microphone.devices[0];
-        return GetLoudnessFromAudioClip(Microphone.GetPosition(Microphone.devices[0]), microphoneClip);
+        float maxAmplitudeNonWebGL = 0.8f;
+        rmsValue = GetLoudnessFromAudioClip(Microphone.GetPosition(Microphone.devices[0]), microphoneClip) / maxAmplitudeNonWebGL;
+        Debug.Log(rmsValue);
     #endif
+
+        return rmsValue;
     }
 
     public float GetLoudnessFromAudioClip(int clipPosition, AudioClip clip)
@@ -65,18 +74,23 @@ public class AudioLoudnessDetection : MonoBehaviour
 
         float[] waveData = new float[sampleWindow];
 
-        if (! clip.GetData(waveData, startPosition))
+        if (!clip.GetData(waveData, startPosition))
         {
             return 0.0f;
         }
 
-        float totalLoudness = 0;
+        return CalculateRMS(waveData);
+    }
 
-        for (int i = 0; i < sampleWindow; i++)
+    private float CalculateRMS(float[] samples)
+    {
+        float sum = 0.0f;
+
+        for (int i = 0; i < samples.Length; i++)
         {
-            totalLoudness += Mathf.Abs(waveData[i]);
+            sum += samples[i] * samples[i];
         }
 
-        return totalLoudness / sampleWindow;
+        return Mathf.Sqrt(sum / samples.Length);
     }
 }
