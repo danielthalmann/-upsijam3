@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028331, g: 0.2257133, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -678,11 +678,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8122695130384201640, guid: dcfffe32d6c4d64468b2067f607b1a42, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 33.40219
+      value: 52.3334
       objectReference: {fileID: 0}
     - target: {fileID: 8122695130384201640, guid: dcfffe32d6c4d64468b2067f607b1a42, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 32.1654
+      value: 50.3956
       objectReference: {fileID: 0}
     - target: {fileID: 8122695130384201640, guid: dcfffe32d6c4d64468b2067f607b1a42, type: 3}
       propertyPath: m_LocalPosition.x
@@ -714,11 +714,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8122695130384201640, guid: dcfffe32d6c4d64468b2067f607b1a42, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -162
+      value: -167
       objectReference: {fileID: 0}
     - target: {fileID: 8122695130384201640, guid: dcfffe32d6c4d64468b2067f607b1a42, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -60
+      value: -61
       objectReference: {fileID: 0}
     - target: {fileID: 8122695130384201640, guid: dcfffe32d6c4d64468b2067f607b1a42, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -845,11 +845,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5046478879059454609, guid: 1918407175f5dc94cb0790adf5ea8be4, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 160
+      value: 334.1948
       objectReference: {fileID: 0}
     - target: {fileID: 5046478879059454609, guid: 1918407175f5dc94cb0790adf5ea8be4, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 32.9057
+      value: 68.7307
       objectReference: {fileID: 0}
     - target: {fileID: 5046478879059454609, guid: 1918407175f5dc94cb0790adf5ea8be4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -881,11 +881,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5046478879059454609, guid: 1918407175f5dc94cb0790adf5ea8be4, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -140
+      value: -244.51697
       objectReference: {fileID: 0}
     - target: {fileID: 5046478879059454609, guid: 1918407175f5dc94cb0790adf5ea8be4, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 67
+      value: 117.15503
       objectReference: {fileID: 0}
     - target: {fileID: 5046478879059454609, guid: 1918407175f5dc94cb0790adf5ea8be4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
