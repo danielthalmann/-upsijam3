@@ -8,7 +8,9 @@ public class EnemiesSpawn : MonoBehaviour
 {
 
     public float radius = 1f;
-    public float frequence = 5f;
+    public float frequence = 3f;
+	public float minFrequence = 1f;
+	public float maxFrequence = 5f;
     public float speed = 5f;
 
     public List<GameObject> enemies;
@@ -19,11 +21,10 @@ public class EnemiesSpawn : MonoBehaviour
 
     public ScoreCount counter;
 
-
     // Start is called before the first frame update
     void Start()
     {
-        
+       
     }
 
     // Update is called once per frame
@@ -43,6 +44,7 @@ public class EnemiesSpawn : MonoBehaviour
         //Debug.Log("Enemies:");
         //Debug.Log(multipliedSpeed);
 
+
         if (timerElapsed > frequence)
         {
             if (enemies.Count > 0)
@@ -54,6 +56,11 @@ public class EnemiesSpawn : MonoBehaviour
                 instances.Add(enemy);
             }
             timerElapsed = 0;
+
+			/* compute random frequence in between a range */
+			System.Random rand = new System.Random();
+			frequence = minFrequence + (float)rand.NextDouble() * (maxFrequence - minFrequence);
+			Debug.Log("frequence: "+frequence);
         }
 
         for (int i = 0; i < instances.Count; i++)
