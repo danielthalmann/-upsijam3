@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class ScoreCount : MonoBehaviour
 {
@@ -40,7 +41,18 @@ public class ScoreCount : MonoBehaviour
 
         scoreCount = Mathf.RoundToInt(score);
 
-        scoreText.SetText(scoreCount.ToString());
+        // Scene
+        Scene m_Scene = SceneManager.GetActiveScene();
+        string sceneName = m_Scene.name;
+
+        if (m_Scene != null && sceneName != "Game")
+        {
+            scoreText.SetText("");
+        }
+        else
+        {
+            scoreText.SetText(scoreCount.ToString());
+        }
     }
 
     public float GetCurrentSeconds()

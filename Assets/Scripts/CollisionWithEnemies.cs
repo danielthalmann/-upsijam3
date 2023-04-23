@@ -46,6 +46,10 @@ public class CollisionWithEnemies : MonoBehaviour
     void RemoveLife()
     {
         --currentLife;
-        lives[currentLife].enabled = false;
+
+        if (currentLife > 0)
+        {
+            lives[currentLife].enabled = false;
+        }
     }
 }
