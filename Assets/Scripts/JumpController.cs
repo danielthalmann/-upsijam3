@@ -20,10 +20,10 @@ public class JumpController : MonoBehaviour
 	public float maxJump = 10;
 
 	public float maxLoudness = 100;
+	public Animator _animator;
 
 	//plazer animation states
 
-	Animator _animator;
 	string _currentState;
 	const string RUNNING = "running";
 	const string JUMPINGSTART = "JumpingStart";
@@ -39,7 +39,7 @@ public class JumpController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-		_animator = gameObject.GetComponent<Animator>();	
+		
     }
 
 
