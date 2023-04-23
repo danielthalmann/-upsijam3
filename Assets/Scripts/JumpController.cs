@@ -75,7 +75,7 @@ public class JumpController : MonoBehaviour
             }
 
 			/* jump with mouse click: */
-
+			/*
 			float	jumpForce = 5;
 
 			if (Input.GetMouseButtonDown(0))
@@ -90,6 +90,7 @@ public class JumpController : MonoBehaviour
 			{
 				rb.velocity = Vector2.up * jumpForce * 0.5f;
 			}
+			*/
 		}
     }
 
