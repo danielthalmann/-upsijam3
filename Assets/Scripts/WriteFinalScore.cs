@@ -10,6 +10,7 @@ public class WriteFinalScore : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        scoreText.SetText("Score: "+ScoreCount.Instance.GetScoreCount().ToString());
+        if (ScoreCount.Instance != null)
+           scoreText.SetText("Score: "+ScoreCount.Instance.GetScoreCount().ToString());
     }
 }
