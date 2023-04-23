@@ -339,6 +339,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ExitButton
       objectReference: {fileID: 0}
+    - target: {fileID: 5046478879059454610, guid: 1918407175f5dc94cb0790adf5ea8be4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5046478879059454623, guid: 1918407175f5dc94cb0790adf5ea8be4, type: 3}
       propertyPath: m_Sprite
       value: 
