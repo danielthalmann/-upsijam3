@@ -14,7 +14,7 @@ public class JumpController : MonoBehaviour
 
 	public AudioLoudnessDetection detector;
 	public float loudnessSensibility = 100;
-	public float threshold = 10;
+	public float threshold = 20;
 
 	public float minJump = 3;
 	public float maxJump = 10;
@@ -44,15 +44,16 @@ public class JumpController : MonoBehaviour
 
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-		if (isGrounded())
+        float jumpForce = 10;
+        if (isGrounded())
 		{
-            if (isAnimationPlaying(_animator, JUMPINGTOP))
+          /*  if (isAnimationPlaying(_animator, JUMPINGSTART))
             {
                 ChangeAnimationState(JUMPINGEND);
-            }
-            if (isAnimationPlaying(_animator, JUMPINGEND))
+            }*/
+            if (isAnimationPlaying(_animator, JUMPINGSTART))
 			{
 				ChangeAnimationState(RUNNING);
 			}
@@ -63,15 +64,18 @@ public class JumpController : MonoBehaviour
             float loudness = detector.GetLoudnessFromMicrophone() * loudnessSensibility;
 			if (loudness >= threshold)
 			{
-				//Debug.Log(loudness);
-				rb.velocity = Vector2.up * (minJump + (maxJump - minJump) * loudness / maxLoudness);
-				ChangeAnimationState(JUMPINGSTART);
-                if (isAnimationPlaying(_animator, JUMPINGSTART))
+				Debug.Log(loudness);
+				if (loudness > 4 * threshold)
+					rb.velocity = Vector2.up * jumpForce * 1.8f;
+				else
+                    rb.velocity = Vector2.up * jumpForce * 1.1f;
+                ChangeAnimationState(JUMPINGSTART);
+                /*if (isAnimationPlaying(_animator, JUMPINGSTART))
                 {
-                    ChangeAnimationState(JUMPINGTOP);
+                    ChangeAnimationState(JUMPINGEND);
                 }
 				else
-                    ChangeAnimationState(JUMPINGTOP);
+                    ChangeAnimationState(JUMPINGEND);*/
             }
 
 			/* jump with mouse click: */
