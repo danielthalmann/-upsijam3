@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e8fbfcb0197704e329c6cf3871b19d77
+guid: 649f7fd50bf7cd24fbbde9b09f08f676
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -117,12 +117,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Btn_play_seul_0
+      name: Btn_avc_anneau_2_0
       rect:
         serializedVersion: 2
-        x: 177
-        y: 111
-        width: 201
+        x: 106
+        y: 81
+        width: 265
         height: 280
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -131,8 +131,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 505d752e0ceebce4eae8dbbc44ee91e2
-      internalID: -869114621
+      spriteID: 8ee63c7b33e016640b6d19798ecfbde9
+      internalID: 1926046507
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Btn_play_seul_0: -869114621
+      Btn_avc_anneau_2_0: 1926046507
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

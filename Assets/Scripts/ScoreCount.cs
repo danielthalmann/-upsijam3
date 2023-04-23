@@ -44,7 +44,7 @@ public class ScoreCount : MonoBehaviour
 
     public float GetCurrentSeconds()
     {
-        return Time.realtimeSinceStartup;
+        return Time.timeSinceLevelLoad;
     }
 
     public float GetMultiplier()
