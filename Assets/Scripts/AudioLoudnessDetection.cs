@@ -33,6 +33,11 @@ public class AudioLoudnessDetection : MonoBehaviour
     #endif
     }
 
+    private void FixedUpdate()
+    {
+        //Debug.Log(GetLoudnessFromMicrophone());
+    }
+
     public void MicrophoneToAudioClip()
     {
     #if !UNITY_WEBGL || UNITY_EDITOR

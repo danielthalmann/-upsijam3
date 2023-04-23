@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 /* maybe not here ?*/
 using UnityEngine.SceneManagement;
@@ -12,10 +13,14 @@ public class CollisionWithEnemies : MonoBehaviour
 	public LayerMask enemyLayerMask;
 	public UnityEvent onPlayerDeath;
 
+    public static int currentLife;
+
+    public List<Image> lives;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        currentLife = lives.Count;
     }
 
     // Update is called once per frame
@@ -26,11 +31,21 @@ public class CollisionWithEnemies : MonoBehaviour
 
 	void OnCollisionEnter2D(Collision2D col)
 	{
-		//Debug.Log(col.gameObject.layer);
-		if (((1 << col.gameObject.layer) & enemyLayerMask.value) != 0)
+        if (((1 << col.gameObject.layer) & enemyLayerMask.value) != 0)
 		{
-			//Debug.Log("hello");
-			onPlayerDeath.Invoke();
-		}
+            RemoveLife();
+
+            // x(maxLife), death
+            if (currentLife < 1)
+            {
+                onPlayerDeath.Invoke();
+            }
+        }
 	}
+
+    void RemoveLife()
+    {
+        --currentLife;
+        lives[currentLife].enabled = false;
+    }
 }
