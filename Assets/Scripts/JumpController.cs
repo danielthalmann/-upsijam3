@@ -14,7 +14,7 @@ public class JumpController : MonoBehaviour
 
 	public AudioLoudnessDetection detector;
 	public float loudnessSensibility = 100;
-	public float threshold = 20;
+	public float threshold = 25;
 
 	public float minJump = 3;
 	public float maxJump = 10;
